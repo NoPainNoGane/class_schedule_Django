@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    /* background-color: aliceblue; */
+    background-image: linear-gradient(to right, black, aliceblue);
+}
+
+li {
+    list-style: none;
+}
+
+.head_link {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+.head_link:hover {
+    color: #DE546B;
+}
+
+
+/* HEADER */
+header {
+    position: relative;
+    padding: 0 2rem;
+    background-color: black;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .logreg {
+    margin-left: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.dropDownMenu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 80px;
+    width: 300px;
+    height: 0;
+    background: black;
+    backdrop-filter: blur(16px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropDownMenu.open {
+    height: 240px;
+}
+
+.navbar .log {
+    padding: 0.5rem 1rem;
+    align-items: end;
+    display: flex;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    border: 2px solid orange;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropDownMenu .log {
+    text-decoration: none;
+    color: aliceblue;
+    border: 2px solid orange;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.log:hover {
+    scale: 1.05;
+    color: #DE546B;
+}
+
+.log:active{
+    scale: 0.95;
+}
+
+.navbar .register {
+    align-items: end;
+    display: flex;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropDownMenu .register {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.register:hover {
+    scale: 1.05;
+    color: #DE546B;
+}
+
+.register:active{
+    scale: 0.95;
+}
+
+.dropDownMenu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .log,
+    .navbar .register {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropDownMenu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropDownMenu {
+        border-radius: 0px;
+        left: 0rem;
+        width: 100%;
+    }
+}
+
+.mainPage {
+    margin: 15rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    height: 700px;
+    min-height: 450px;
+    padding: 50px 20px;
+}
+
+.tab_content .show {
+    display: flex;
+    background-color: #DE546B;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.tab_content .show:hover{
+    background-color: #901B2E;
+}
+
+.customInput {
+    width: 40%;
+    max-height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin: 8px;
+    outline: none;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer{
+    background-color: black;
+    margin: auto;
+    color: #fff;
+}
+
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-col{
+    width:33.3%;
+    padding: 5rem 40px;
+}
+
+.rudolf-img{
+    margin-left: 5rem;
+    border-radius: 50%;
+    width: 20vh;
+    height: auto;
+}
+
+/* DropDown menu */
+
+.select-menu {
+    width: max-content; /*380px*/
+}
+
+.select-menu .select-btn {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(226, 131, 229, 0.35);
+}
+
+.select-btn .icon-arrow {
+    font-size: 25px;
+    transition: 1s;
+}
+
+.select-btn.active .icon-arrow {
+    transform: rotate(180deg);
+}
+
+.select-menu .list {
+    position: relative;
+    width: 380px;
+    margin-top: 10px;
+}
+
+.list .option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    background: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    transform-origin: top;
+    opacity: 0;
+    transform: scale(0) translateY(-65px);
+    margin-bottom: -55px;
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out, margin-bottom .5s ease-in-out;
+    transition-delay: calc(.1s * var(--i));
+}
+
+.select-btn.active~.list .option {
+    transition: opacity .1s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(.1s * var(--i));
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    margin-bottom: 0;
+}
+
+.list .option:hover {
+    background: #f2f2f2;
+}
+
+.list .option:nth-child(1) {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.list .option:nth-child(3) {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.option .option-text {
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* Calendar */
+
+.calendar {
+    width: max-content; /*380px*/
+    margin-bottom: 20px;
+}
+
+.calendar .date-picker {
+    width: 380px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(226, 131, 229, 0.35);
+    font-size: 18px;
+    color: black;
+}
+
+/* Login Registration form */
+
+/* *,
+:after,
+:before {
+  box-sizing: border-box;
+} */
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  display: block;
+}
+
+.login-wrap {
+  width: 100%;
+  margin: auto;
+  max-width: 525px;
+  min-height: 670px;
+  position: relative;
+  background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg)
+    no-repeat center;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.login-html {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 90px 70px 50px 70px;
+  background: rgba(40, 57, 101, 0.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check {
+  display: none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button {
+  text-transform: uppercase;
+}
+.login-html .tab {
+  font-size: 22px;
+  margin-right: 15px;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin: 0 15px 10px 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab {
+  color: #fff;
+  border-color: #1161ee;
+  cursor: pointer;
+}
+.login-form {
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.login-form .group {
+  margin-bottom: 15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+  width: 100%;
+  color: #fff;
+  display: block;
+}
+.login-form .group .input,
+.login-form .group .button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.login-form .group input[data-type="password"] {
+  -webkit-text-security: circle;
+}
+.login-form .group .label {
+  color: #aaa;
+  font-size: 12px;
+}
+.login-form .group .button {
+  background: #1161ee;
+  cursor: pointer;
+}
+.login-form .group .button:hover {
+    background:#1454c4;
+    cursor: pointer;
+  }
+.login-form .group label .icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  position: relative;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  transition: all 0.2s ease-in-out 0s;
+}
+.login-form .group label .icon:before {
+  left: 3px;
+  width: 5px;
+  bottom: 6px;
+  transform: scale(0) rotate(0);
+}
+.login-form .group label .icon:after {
+  top: 6px;
+  right: 0;
+  transform: scale(0) rotate(0);
+}
+.login-form .group .check:checked + label {
+  color: #fff;
+}
+.login-form .group .check:checked + label .icon {
+  background: #1161ee;
+}
+.login-form .group .check:checked + label .icon:before {
+  transform: scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after {
+  transform: scale(1) rotate(-45deg);
+}
+.login-html
+  .sign-in:checked
+  + .tab
+  + .sign-up
+  + .tab
+  + .login-form
+  .sign-in-htm {
+  transform: rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+  transform: rotate(0);
+}
+.hr {
+  height: 2px;
+  margin: 60px 0 50px 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+.foot-lnk {
+  text-align: center;
+}
+
+
+
+

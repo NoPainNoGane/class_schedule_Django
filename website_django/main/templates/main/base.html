@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание БашХК</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href='{% static "main/css/style.css" %}'>
+    
+    
+</head>
+<body>      
+    <header>
+        <div class="navbar"> 
+            <div class="logo"><a href="#" class="head_link">
+                Башкирский Хореографический колледж
+            </a></div>
+            <ul class="links">
+                <li><a href="#" class="head_link">Главная</a></li>
+                <li><a href="{% url 'home' %}" class="head_link">Расписание</a></li>
+                <li><a href="#" class="head_link">Личный кабинет</a></li>
+                <!-- <li><a href="login" class="head_link">Вход</a></li>
+                <li><a href="reg" class="head_link" id="register">Регистрация</a></li> -->
+            </ul>
+            <ul class="logreg">
+                <li><a href="{% url 'login' %}" class="log">Вход</a></li>
+                <li><a href="{% url 'login' %}" class="register">Регистрация</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <script src="https://kit.fontawesome.com/bc390af48f.js" crossorigin="anonymous"></script>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropDownMenu">
+            <li><a href="glavn" class="head_link">Главная</a></li>
+            <li><a href="schedule" class="head_link">Расписание</a></li>
+            <li><a href="lk" class="head_link">Личный кабинет</a></li>
+            <li><a href="login" class="log">Вход</a></li>
+            <li><a href="reg" class="register">Регистрация</a></li>
+        </div>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropDownMenu')
+    
+            toggleBtn.onclick = function() {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+                
+                toggleBtnIcon.classList = isOpen
+                    ? 'fa-solid fa-xmark'
+                    : 'fa-solid fa-bars'
+            }
+        </script>
+
+    </header>
+    
+
+    <div class="mainPage">
+        {% block mainPage %}
+
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        {<div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <img class="rudolf-img" src="{% static "main/images/page-1_img01.jpg" %}" alt="Рудольф Нуреев">
+                </div>
+                <div class="footer-col">
+                    <p style="text-align: center;font-weight:500;">МИНИСТЕРСТВО КУЛЬТУРЫ РЕСПУБЛИКИ БАШКОРТОСТАН<br>
+                        Государственное Бюджетное Профессиональное<br>
+                        Образовательное Учреждение Республики Башкортостан<br>
+                        Башкирский хореографический колледж<br>
+                        имени Рудольфа Нуреева</p>
+                </div>
+                <div class="footer-col">
+                    <ul class="info" style="margin-left: 10rem;">
+                        <li style="list-style: none;"><a href="#">Уфа, ул. Свердлова 38</a></li>
+                        <li style="list-style: none;"><a href="#">bhu2006@yandex.ru</a></li>
+                        <li style="list-style: none;"><a href="#">+7(347) 251 19 87 <br> +7(347) 251 19 88</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>}
+    </footer>
+    
+</body>
+</html>

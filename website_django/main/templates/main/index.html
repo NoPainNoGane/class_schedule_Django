@@ -1,0 +1,63 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block mainPage %}
+
+    <div class="tab_content">
+        <h1 style="color: white; padding-bottom: 30px; text-transform:uppercase">Расписание</h1>
+        <div class="calendar">
+            <input type="date" class="date-picker" placeholder="Дата">
+
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>             <!--Подключение библиотеки календаря-->
+            <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script> <!--Локализация на русский-->
+            <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>       <!--Локализация на русский-->
+            <script>
+                flatpickr.localize(flatpickr.l10ns.ru);
+                flatpickr(".date-picker", {
+                    "disable": [
+                        function(date) {
+                            // return true to disable
+                            return (date.getDay() === 0 || date.getDay() === 6);
+                
+                        }
+                    ],
+                    "locale": {
+                        "firstDayOfWeek": 1 // start week on Monday
+                    },
+                    altInput: true,
+                    altFormat: "F j, Y",
+                    dateFormat: "Y-m-d"
+                });
+            </script>
+        </div>
+        <div class="select-menu">
+            <div class="select-btn" id="select-btn">
+                <span class="text" id="text">Класс</span>
+                <ion-icon name="chevron-down-outline" class="icon-arrow"></ion-icon>
+            </div>
+
+            <ul class="list">
+                <li class="option" style="--i:1">
+                    <span class="option-text">5-1</span>
+                </li>
+                <li class="option" style="--i:2">
+                    <span class="option-text">5-2</span>
+                </li>
+                <li class="option" style="--i:3">
+                    <span class="option-text">5-3</span>
+                </li>
+            </ul>
+        </div>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+
+
+
+        <script src="{% static "main/js/dropdownmenu.js" %}"></script>
+
+
+        <button class="show">Показать</button>
+    </div>
+
+{% endblock %}
+
